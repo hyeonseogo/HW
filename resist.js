@@ -1,8 +1,8 @@
 function sendit() {
   const username = document.getElementById("username");
-  const useremail = document.getElementById("useremail");
+  const useremail = document.getElementById("email");
   const userpw = document.getElementById("userpw");
-  const userpw_re = document.getElementById("userpw_re");
+  const userpw_re = document.getElementById("userpwr");
 
   const expNameText = /^[가-힣]+$/;
   const expEmailText = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
