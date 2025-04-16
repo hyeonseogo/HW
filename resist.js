@@ -1,15 +1,22 @@
 function sendit() {
   const username = document.getElementById("username");
+  const useremail = document.getElementById("useremail");
   const userpw = document.getElementById("userpw");
   const userpw_re = document.getElementById("userpw_re");
 
+  const expNameText = /^[가-힣]+$/;
+  const expEmailText = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const expPwText =
     /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,20}$/;
-  const expNameText = /^[가-힣]+$/;
-  const expHpText = /^\d{3}-\d{3,4}-\d{4}$/;
 
   if (!expNameText.test(username.value)) {
     alert("이름은 한글로 입력하세요.");
+    username.focus();
+    return false;
+  }
+
+  if (!expEmailText.test(useremail.value)) {
+    alert("유효하지 않은 이메일 형식입니다.");
     username.focus();
     return false;
   }
