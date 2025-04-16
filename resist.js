@@ -3,15 +3,11 @@ function sendit() {
   const useremail = document.getElementById("email");
   const userpw = document.getElementById("userpw");
   const userpw_re = document.getElementById("userpwr");
-  const userrenumber1 = document.getElementById("residentnum1");
-  const userrenumber2 = document.getElementById("residentnum2");
 
   const expNameText = /^[가-힣]+$/;
   const expEmailText = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const expPwText =
     /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,20}$/;
-  const expJuminNum1 = /^\d{6}$/;
-  const expJuminNum2 = /^\d{7}$/;
 
   if (!expNameText.test(username.value)) {
     alert("이름은 한글로 입력하세요.");
@@ -49,8 +45,25 @@ function sendit() {
     userrenumber2.focus();
     return false;
   }
-  function jumincheck() {
+  return true;
+}
+
+function jumincheck() {
+  const userrenumber1 = document.getElementById("residentnum1");
+  const userrenumber2 = document.getElementById("residentnum2");
+
+  const expJuminNum1 = /^\d{6}$/;
+  const expJuminNum2 = /^\d{7}$/;
+
+  if (!expJuminNum1.test(userrenumber1.value)) {
     alert("주민등록번호를 입력해주세요.");
+    userrenumber1.focus();
+    return false;
+  }
+  if (!expJuminNum2.test(userrenumber2.value)) {
+    alert("주민등록번호를 입력해주세요.");
+    userrenumber2.focus();
+    return false;
   }
 
   const weights = [2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4, 5];
@@ -68,6 +81,4 @@ function sendit() {
   } else {
     alert("유효하지 않은 주민등록번호입니다.");
   }
-
-  return true;
 }
