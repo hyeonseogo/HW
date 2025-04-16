@@ -3,13 +3,15 @@ function sendit() {
   const useremail = document.getElementById("email");
   const userpw = document.getElementById("userpw");
   const userpw_re = document.getElementById("userpwr");
-  const userrenumber = document.getElementById("residentnum");
+  const userrenumber1 = document.getElementById("residentnum1");
+  const userrenumber2 = document.getElementById("residentnum2");
 
   const expNameText = /^[가-힣]+$/;
   const expEmailText = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const expPwText =
     /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,20}$/;
-  const expJuminNum = /^\d{13}$/;
+  const expJuminNum1 = /^\d{6}$/;
+  const expJuminNum2 = /^\d{7}$/;
 
   if (!expNameText.test(username.value)) {
     alert("이름은 한글로 입력하세요.");
@@ -37,24 +39,31 @@ function sendit() {
     return false;
   }
 
-  if (!expJuminNum.test(userrenumber.value)) {
-    alert("13자리 숫자를 입력해주세요.");
-    userrenumber.focus();
+  if (!expJuminNum1.test(userrenumber1.value)) {
+    alert("주민등록번호를 입력해주세요.");
+    userrenumber1.focus();
     return false;
+  }
+  if (!expJuminNum2.test(userrenumber2.value)) {
+    alert("주민등록번호를 입력해주세요.");
+    userrenumber2.focus();
+    return false;
+  }
+  function jumincheck() {
+    alert("주민등록번호를 입력해주세요.");
   }
 
   const weights = [2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4, 5];
+  const fullnum = userrenumber1.value + userrenumber2.value;
   let sum = 0;
 
   for (let i = 0; i < 12; i++) {
-    sum += parseInt(userrenumber[i], 10) * weights[i];
+    sum += parseInt(fullnum[i], 10) * weights[i];
   }
 
-  let check = 11 - (sum % 11);
-  if (check === 10) check = 0;
-  if (check === 11) check = 1;
+  const check = (11 - (sum % 11)) % 10;
 
-  if ((check === parseInt(userrenumber[12]), 10)) {
+  if (check === parseInt(fullnum[12], 10)) {
     alert("유효한 주민등록번호입니다.");
   } else {
     alert("유효하지 않은 주민등록번호입니다.");
