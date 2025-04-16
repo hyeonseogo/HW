@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입</title>
+    <link rel="stylesheet" href="./css/hw.css" />
+  </head>
+  <body>
+    <main>
+      <h1>회원 가입</h1>
+      <form action="/signup" method="post">
+        <div class="form-group">
+          <label for="username">이름</label>
+          <input
+            type="text"
+            maxlength="5"
+            name="username"
+            id="username"
+            placeholder="이름을 입력하세요"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email">이메일</label>
+          <input
+            type="email"
+            name="email"
+            maxlength="100"
+            id="email"
+            placeholder="이메일을 입력하세요"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="userpw">비밀번호</label>
+          <input
+            type="password"
+            name="userpw"
+            maxlength="20"
+            id="userpw"
+            placeholder="비밀번호를 입력하세요"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="userpwr">비밀번호 확인</label>
+          <input
+            type="password"
+            name="userpwr"
+            maxlength="20"
+            id="userpwr"
+            placeholder="비밀번호를 입력하세요"
+          />
+        </div>
+
+        <div class="form-group">
+          성별
+          <label
+            >남자<input type="radio" id="male" name="gender" value="남" checked
+          /></label>
+          <label
+            >여자<input type="radio" id="female" name="gender" value="여"
+          /></label>
+        </div>
+
+        <fieldset>
+          <legend>관심 분야</legend>
+          <label for="html">HTML</label>
+          <input type="checkbox" id="html" name="interest" value="html" />
+          <label for="html">CSS</label>
+          <input type="checkbox" id="css" name="interest" value="css" />
+          <label for="html">JavaScript</label>
+          <input
+            type="checkbox"
+            id="javascript"
+            name="interest"
+            value="javascript"
+          />
+          <label for="html">Python</label>
+          <input type="checkbox" id="python" name="interest" value="python" />
+          <label for="html">Java</label>
+          <input type="checkbox" id="java" name="interest" value="java" />
+        </fieldset>
+
+        <div class="form-group">
+          <label for="intro">자기소개</label>
+          <textarea
+            name="intro"
+            id="intro"
+            placeholder="간단한 자기소개를 작성해주세요."
+          ></textarea>
+        </div>
+
+        <button type="submit">가입하기</button>
+
+        <a href="#" class="fixed-button">도움말</a>
+      </form>
+    </main>
+  </body>
+</html>

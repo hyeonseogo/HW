@@ -1,0 +1,119 @@
+html {
+  background: url(./field.jpg) no-repeat fixed center/cover; /* fixed : 배경 움직이지 않음. */
+  /* background-size: cover;*/
+}
+
+@font-face {
+  font-family: "Ownglyph_corncorn-Rg";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2412-1@1.0/Ownglyph_corncorn-Rg.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Ownglyph_corncorn-Rg;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 40px;
+}
+
+main {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: rgb(246, 255, 246);
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input,
+select,
+textarea {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #9abd94;
+  border-radius: 5px;
+}
+button {
+  padding: 10px;
+  width: 50%;
+  border: 1px solid #9abd94;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto;
+  margin-right: 5px;
+}
+
+.form-group.inline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+fieldset {
+  border: 1px solid #9abd94;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+legend {
+  font-weight: bold;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+button[type="submit"] {
+  background-color: #5fb29c;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #458fa0;
+}
+
+.fixed-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgb(237, 218, 111);
+  color: black;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.fixed-button:hover {
+  background-color: #c3aa5b;
+}
