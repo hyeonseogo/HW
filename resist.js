@@ -8,6 +8,8 @@ function sendit() {
   const expEmailText = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const expPwText =
     /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,20}$/;
+  const expJuminNum1 = /^\d{6}$/;
+  const expJuminNum2 = /^\d{7}$/;
 
   if (!expNameText.test(username.value)) {
     alert("이름은 한글로 입력하세요.");
